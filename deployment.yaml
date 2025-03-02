@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: azure-vote-back
-        image: redis
+        image: hypriot/rpi-redis
         ports:
         - containerPort: 6379
           name: redis
