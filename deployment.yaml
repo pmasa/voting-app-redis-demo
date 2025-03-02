@@ -38,11 +38,11 @@ spec:
   selector:
     matchLabels:
       app: azure-vote-front
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-  minReadySeconds: 5 
+  #strategy:
+  #  rollingUpdate:
+  #    maxSurge: 1
+  #    maxUnavailable: 1
+  #minReadySeconds: 5 
   template:
     metadata:
       labels:
@@ -53,11 +53,11 @@ spec:
         image: pedromasa/azure-vote-front:22
         ports:
         - containerPort: 80
-        resources:
-          requests:
-            cpu: 250m
-          limits:
-            cpu: 500m
+        #resources:
+        #  requests:
+        #    cpu: 250m
+        #  limits:
+        #    cpu: 500m
         env:
         - name: REDIS
           value: "azure-vote-back"
