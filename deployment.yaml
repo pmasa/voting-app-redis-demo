@@ -52,7 +52,7 @@ spec:
       - name: azure-vote-front
         image: pedromasa/azure-vote-front:22
         ports:
-        - containerPort: 80
+        - containerPort: 88
         #resources:
         #  requests:
         #    cpu: 250m
@@ -69,8 +69,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 88
+    targetPort: 88
     nodePort: 30009
   selector:
     app: azure-vote-front
