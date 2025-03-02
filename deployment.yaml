@@ -4,13 +4,14 @@ metadata:
   name: azure-vote-back
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: azure-vote-back
   template:
     metadata:
       labels:
         app: azure-vote-back
     spec:
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
       containers:
       - name: azure-vote-back
         image: redis
@@ -34,6 +35,9 @@ metadata:
   name: azure-vote-front
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: azure-vote-back
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -44,8 +48,6 @@ spec:
       labels:
         app: azure-vote-front
     spec:
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
         image: pedromasa/azure-vote-front:22
