@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
       - name: azure-vote-front
-        image: pedromasa/azure-vote-front:20
+        image: pedromasa/azurevotefront:20
         ports:
         - containerPort: 80
         resources:
